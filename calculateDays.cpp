@@ -52,7 +52,7 @@ long calculateDays(long date1, long date2) {
   int mDays1 = 0;
   // while the current month number is < 13 AND
   // it can't be > month of the second date when the years are the same 
-  for (int i = m[0] + 1; (i < 13) && !(yr[0] == yr[1] && i >= m[1]); i++) {
+  for (int i = m[0] + 1; ((i < 13) && (yr[0] != yr[1])) || (i < m[1]); i++) {
     // cout << "i is " << i << endl;
 
     // if the month is 1,3,5,7 (odd numbers less than 8)
