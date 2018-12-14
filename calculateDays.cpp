@@ -108,7 +108,7 @@ long calculateDays(long date1, long date2) {
   // calculate the days in that last month
   int dDays2 = 0;
   // if either yr or month are different
-  if (yr[0] == yr[1] || m[0] != m[1]) {
+  if (yr[0] != yr[1] || m[0] != m[1]) {
     dDays2 = d[1];
   }
 
