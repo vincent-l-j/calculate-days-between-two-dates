@@ -118,7 +118,7 @@ long calculateDays(long date1, long date2) {
   // cout << "mDays1 = " << mDays1 << endl;
   // cout << "yDays = "  << yDays  << endl;
   // cout << "mDays2 = " << mDays2 << endl;
-  // cout << "dDays2 = " << dDays2 << endl;
+  // cout << "dDays2 = " << dDays2 << endl; 
 
   res = dDays1 + mDays1 + yDays + mDays2 + dDays2;
   
