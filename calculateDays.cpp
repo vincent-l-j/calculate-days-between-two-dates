@@ -24,9 +24,11 @@ long calculateDays(long date1, long date2) {
     d[i] = date[i] % 100;
   }
 
-  bool lpyr1 = false;
-  if ((yr[0] % 4 == 0) && (yr[0] % 100 != 0) || (yr[0] % 400 == 0)) {
-    lpyr1 = true;
+  bool lpyr[2];
+  for (int i = 0; i < 2; i++) {
+    if ((yr[i] % 4 == 0) && (yr[i] % 100 != 0) || (yr[i] % 400 == 0)) {
+      lpyr[i] = true;
+    }
   }
 
   // calculate days til end of first month of first date
@@ -41,7 +43,7 @@ long calculateDays(long date1, long date2) {
   else if ((m[0] == 4) || (m[0] == 6) || (m[0] == 9) || (m[0] == 11)) {
     dDays1 = 30 - d[0];
   }
-  else if (lpyr1) {
+  else if (lpyr[0]) {
     dDays1 = 29 - d[0];
   }
   else {
@@ -65,7 +67,7 @@ long calculateDays(long date1, long date2) {
       mDays1 += 30;
       // cout << "adding 30" << endl;
     }
-    else if (lpyr1) {
+    else if (lpyr[0]) {
       mDays1 += 29;
       // cout << "adding 29" << endl;
     }
@@ -97,7 +99,7 @@ long calculateDays(long date1, long date2) {
     else if ((i == 4) || (i == 6) || (i == 9) || (i == 11)) {
       mDays2 += 30;
     }
-    else if (lpyr1) {
+    else if (lpyr[1]) {
       mDays2 += 29;
     }
     else {
@@ -112,11 +114,11 @@ long calculateDays(long date1, long date2) {
     dDays2 = d[1];
   }
 
-  // cout << "dDays1 = " << dDays1 << endl;
-  // cout << "mDays1 = " << mDays1 << endl;
-  // cout << "yDays = "  << yDays  << endl;
-  // cout << "mDays2 = " << mDays2 << endl;
-  // cout << "dDays2 = " << dDays2 << endl;
+  cout << "dDays1 = " << dDays1 << endl;
+  cout << "mDays1 = " << mDays1 << endl;
+  cout << "yDays = "  << yDays  << endl;
+  cout << "mDays2 = " << mDays2 << endl;
+  cout << "dDays2 = " << dDays2 << endl;
 
   res = dDays1 + mDays1 + yDays + mDays2 + dDays2;
   
